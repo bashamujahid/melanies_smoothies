@@ -19,7 +19,8 @@ my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT
 
 # convert the snowflake dataframe to pandas dataframe so we can use the LOC function
 pd_df = my_dataframe.to_pandas()
-pd_df.stop()
+st.dataframe(pd_df)
+st.stop()
 
 # Create a multi-select widget
 ingredients_list = st.multiselect( # multiselect() returns a list.
